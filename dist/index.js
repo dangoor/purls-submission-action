@@ -20415,7 +20415,9 @@ async function run() {
   );
 
   const purls = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("purls").split("\n");
-  const manifest = new _github_dependency_submission_toolkit__WEBPACK_IMPORTED_MODULE_2__.Manifest("purls", "purls");
+  const manifestName = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("manifest-name") || "purls";
+  const manifestPath = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("manifest-path") || "purls";
+  const manifest = new _github_dependency_submission_toolkit__WEBPACK_IMPORTED_MODULE_2__.Manifest(manifestName, manifestPath);
   purls.forEach((purl) => manifest.addDirectDependency(new _github_dependency_submission_toolkit__WEBPACK_IMPORTED_MODULE_2__.Package(purl)));
   snapshot.addManifest(manifest);
   (0,_github_dependency_submission_toolkit__WEBPACK_IMPORTED_MODULE_2__.submitSnapshot)(snapshot);
