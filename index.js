@@ -22,8 +22,8 @@ async function run() {
   );
 
   const purls = core.getInput("purls").split("\n");
-  const manifestName = core.getInput("manifest-name") || "purls";
-  const manifestPath = core.getInput("manifest-path") || "purls";
+  const manifestName = core.getInput("manifest-name");
+  const manifestPath = core.getInput("manifest-path");
   const manifest = new Manifest(manifestName, manifestPath);
   purls.forEach((purl) => manifest.addDirectDependency(new Package(purl)));
   snapshot.addManifest(manifest);

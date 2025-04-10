@@ -13,6 +13,14 @@ inputs:
     description: "Name of the detector"
     required: false
     default: purls-submission-action
+  manifest-name:
+    description: "Name to give to the manifest. Used as identifier."
+    required: false
+    default: purls
+  manifest-path:
+    description: "File path to associate with the manifest."
+    required: false
+    default: purls
 runs:
   using: "node16"
   main: "dist/index.js"
