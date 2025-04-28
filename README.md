@@ -18,4 +18,7 @@ jobs:
         with:
           purls: |-
             pkg:npm/react@1.2.3
+          manifest-name: package.json
+          manifest-path: /foo/package.json
+          detector: My Cool Detector
 ```
